@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script src="../js/lib.js"></script>
+<script>
+/*자바스크립트의 주요 내장객체 중 날짜 객체인 date object 학습
+이객체는 우리가 정의한것이 아니라, 이미 자바스크립트 언어 자체에서 사용비중이
+높은 것들을 내장객체로 정의하여 프로그래머에게 제공
+이때 개발자는 자신이 정의한것이 아닌, 남이 준것이므로 구성내용이 어떻게
+되어있는지 알수가없다
+따라서 객체를 정의한 사람이 제공하는 api document보아야 한다
+노하우*/
+// function myWatch(){
+//     var d = new Date(); //날짜 객체의 인스턴스 생성
+//     document.write(d); //객체 자체를 출력하면, 이 객체가 자동으로 string화되어 출련된다
+//     //date 객체 생성시 개발자가 생성자에 아무런 매개변수 즉 인수를 넘기지않으면
+//     //디폴트는 현재 날짜정보로  구성된다!!
+// }
+// setInterval("myWatch()",1000);
+
+//date 객체 다룰때 주의점
+//대부분의 프로그래밍 언어에서는 월은 0부터시작!!
+//또한 요일도 0부터 시작
+var d = new Date(); //현재날짜
+d.setFullYear(1998); //2001년으로 지정
+d.setMonth(5); //3월로 지정
+d.setDate(29); //2일로 지정
+var days=["일","월","화","수","목","금","토"];
+//월 출력시에는 +1 해주자
+document.write("this month is "+(d.getMonth()+1)+"월입니다<br>");
+document.write("today is "+d.getDate()+"일 입니다<br>");
+document.write("today is "+days[d.getDay()]+"요일입니다");
+</script>
+</head>
+<body>
+    
+</body>
+</html>

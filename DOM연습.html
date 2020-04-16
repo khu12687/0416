@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script>
+addEventListener("load",function(){
+    var ch =  document.getElementById("ch");
+    ch.checked=true;
+    document.getElementById("text").value = "Johnny Bravo";
+    /*점 찍고 올수 있는것은? 단 두가지이다 왜? 객체란 변수와 함수를 포함한 단위니깐
+    하지만 어떤 변수와 함수를 보유하는지는 체크박스를 정의한 사람만이 알고있다
+    따라서 남한테 물어보지 말고 문서를 참고하자*/
+
+    //동적으로 테이블을 생성하여 2층 3호수 아파트 표현!!
+    //DOM을 생성하여 테이블을 조합해본다!!
+    //개발자가 원하는 시점에 DOM 객체를 생성하는 방법
+    var td=[];
+    var table = document.createElement("table");
+    var tr = document.createElement("tr");
+    for(var i=0; i<3; i++){
+         td.push(document.createElement("td"));
+         td[i].innerText="0"+i+"호";
+    }
+    
+    
+    //위에서 만들어진 DOM은 <table></table> 의미한다
+
+    document.body.appendChild(table);
+});
+</script>
+</head>
+<body>
+    <!-- 아래의 체크박스는 문서의 테그일 뿐이므로 프로그래밍 언어인 자바스크립트
+        등이 제어할 수없다!!
+        따라서 현재 문서를 브라우저에서 실행시킬때, 체크박스 테그에 대한
+        1대1댕응하는 checkbox DOM이 메모리에 올라온다
+        우리같은 개발자는 chckbox를 제어하려면 checkbox dom 설명서인
+        api document 를 참조 해서 원하는대로 제어하면된다 -->
+    <input id="ch" type ="checkbox"/>
+    <input id="txt" type="text"/>
+    <input id="radio" type="radio"/>
+    <select id="sal">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select>
+    <table>
+    
+    </table>
+</body>
+</html>
